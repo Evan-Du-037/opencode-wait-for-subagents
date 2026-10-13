@@ -1,0 +1,32 @@
+{
+  "name": "opencode-wait-for-subagents",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Wait for native OpenCode background subagent notifications without interrupting the parent session",
+  "exports": {
+    ".": "./server.ts",
+    "./server": "./server.ts"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run typecheck && bun test",
+    "smoke": "bun scripts/smoke.ts"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.0.26"
+  },
+  "devDependencies": {
+    "@opencode/client": "2.0.26",
+    "@types/bun": "1.3.10",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "opencode": ">=2.0.26 <3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evan-Du-037/opencode-wait-for-subagents.git"
+  }
+}
