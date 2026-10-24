@@ -6,7 +6,7 @@ Adds a `wait_for_subagents` tool to OpenCode V2. A parent agent can launch backg
 
 The tool description tells the model when to use it. No custom system prompt is required.
 
-Tested with OpenCode **2.0.26 and 2.0.27**. V1 is not supported. Run the integration tests again when upgrading OpenCode.
+Tested with OpenCode **2.0.26, 2.0.27, and 2.1.4**. **2.1.4** was the latest stable V2 release verified on **2026-10-24**; no plugin code changes were needed. See the [compatibility record](COMPATIBILITY.md) for test results and scope. V1 is not supported; unlisted versions are not individually verified. Run the integration tests again when upgrading OpenCode.
 
 ## Install
 
@@ -26,7 +26,7 @@ Append the following object to the existing `plugins` array in `~/.config/openco
 }
 ```
 
-Restart OpenCode. The tool should be available on the next request. The plugin's directory entrypoint is `server.ts`.
+Saving the configuration reloads plugins automatically. The tool should be available on the next request; use `/reload` to force a reload if needed. The plugin's directory entrypoint is `server.ts`.
 
 ## Usage
 
@@ -80,7 +80,7 @@ These tests check runtime behavior; they are not a benchmark of model delegation
 
 ## Native implementation references
 
-The initial implementation was checked against OpenCode 2.0.26:
+The initial implementation was checked against OpenCode 2.0.26. The [2.1.4 compatibility review](COMPATIBILITY.md#native-contract-review) links to the newer source:
 
 - [Subagent tool](https://github.com/anomalyco/opencode/blob/v2.0.26/packages/core/src/tool/plugin/subagent.ts)
 - [Completion delivery](https://github.com/anomalyco/opencode/blob/v2.0.26/packages/core/src/session/subagent-completion.ts)
